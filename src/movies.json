@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "year": 2010,
+    "rating": 8.8,
+    "genre": ["Azione", "Fantascienza", "Thriller"],
+    "duration": 148,
+    "description": "Un ladro che ruba segreti attraverso la tecnologia dei sogni riceve il compito inverso: piantare un'idea nella mente di un CEO.",
+    "poster": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "year": 2008,
+    "rating": 9.0,
+    "genre": ["Azione", "Crime", "Dramma"],
+    "duration": 152,
+    "description": "Batman affronta il Joker, un criminale caotico che vuole gettare Gotham City nel caos.",
+    "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "year": 2014,
+    "rating": 8.6,
+    "genre": ["Avventura", "Dramma", "Fantascienza"],
+    "duration": 169,
+    "description": "Un gruppo di esploratori viaggia attraverso un wormhole nello spazio per garantire la sopravvivenza dell'umanità.",
+    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "rating": 8.9,
+    "genre": ["Crime", "Dramma"],
+    "duration": 154,
+    "description": "Le storie di criminali, marito e moglie, un pugile e due sicari si intrecciano nella Los Angeles criminale.",
+    "poster": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "rating": 9.3,
+    "genre": ["Dramma"],
+    "duration": 142,
+    "description": "Due uomini condannati stringono un'amicizia nel corso degli anni nel carcere di Shawshank.",
+    "poster": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Godfather",
+    "year": 1972,
+    "rating": 9.2,
+    "genre": ["Crime", "Dramma"],
+    "duration": 175,
+    "description": "Il patriarca anziano di una dinastia criminale trasferisce il controllo del suo impero al figlio riluttante.",
+    "poster": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsLLegion7n6kJy.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Fight Club",
+    "year": 1999,
+    "rating": 8.8,
+    "genre": ["Dramma", "Thriller"],
+    "duration": 139,
+    "description": "Un impiegato insoddisfatto e un venditore di sapone formano un club di lotta clandestino.",
+    "poster": "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Forrest Gump",
+    "year": 1994,
+    "rating": 8.8,
+    "genre": ["Dramma", "Romance"],
+    "duration": 142,
+    "description": "La vita straordinaria di un uomo con un basso QI che assiste involontariamente ai principali eventi storici del XX secolo.",
+    "poster": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Matrix",
+    "year": 1999,
+    "rating": 8.7,
+    "genre": ["Azione", "Fantascienza"],
+    "duration": 136,
+    "description": "Un programmatore scopre che la realtà è una simulazione creata da macchine senzienti.",
+    "poster": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Goodfellas",
+    "year": 1990,
+    "rating": 8.7,
+    "genre": ["Crime", "Dramma"],
+    "duration": 146,
+    "description": "La storia vera di Henry Hill e della sua vita nella mafia dal 1955 al 1980.",
+    "poster": "https://image.tmdb.org/t/p/w500/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Schindler's List",
+    "year": 1993,
+    "rating": 8.9,
+    "genre": ["Biografia", "Dramma", "Storia"],
+    "duration": 195,
+    "description": "Un industriale tedesco salva più di mille ebrei polacchi dallo sterminio nazista durante la Seconda Guerra Mondiale.",
+    "poster": "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "rating": 8.6,
+    "genre": ["Crime", "Dramma", "Thriller"],
+    "duration": 118,
+    "description": "Un agente dell'FBI deve consultare un cannibale incarcerato per catturare un altro serial killer.",
+    "poster": "https://image.tmdb.org/t/p/w500/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg"
+  }
+]
