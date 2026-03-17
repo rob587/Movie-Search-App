@@ -7,7 +7,7 @@ function App() {
   //creazione stati
 
   const [inputValue, setInputValue] = useState("");
-  const [filteredMovie, setFilteredMovie] = useState([]);
+  const [filteredMovie, setFilteredMovie] = useState(movies);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -24,17 +24,19 @@ function App() {
     <>
       <h1>Movie Search App</h1>
       <input
+        onKeyDown={(e) => e.key === "Enter" && searchMovies()}
         type="text"
         value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value);
+          if (e.target.value === "") setFilteredMovie(movies);
         }}
       />
       <button onClick={searchMovies}>Cerca</button>
 
-      {movies.map((movie) => {
+      {filteredMovie.map((movie) => {
         return (
-          <Card style={{ width: "18rem" }}>
+          <Card key={movie.id} style={{ width: "18rem" }}>
             <Card.Img src={movie.poster} />
             <Card.Body>
               <Card.Title>{movie.title}</Card.Title>
