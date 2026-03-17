@@ -5,8 +5,18 @@ function App() {
   //creazione stati
 
   const [inputValue, setInputValue] = useState("");
+  const [filteredMovie, setFilteredMovie] = useState([]);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const searchMovies = () => {
+    const results = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(inputValue.toLowerCase()),
+    );
+    setFilteredMovie(results);
+    //console.log(results);
+  };
 
   return (
     <>
@@ -18,7 +28,7 @@ function App() {
           setInputValue(e.target.value);
         }}
       />
-      <button>Cerca</button>
+      <button onClick={searchMovies}>Cerca</button>
     </>
   );
 }
