@@ -1,5 +1,7 @@
 import { useState } from "react";
 import movies from "./movies.json";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function App() {
   //creazione stati
@@ -29,6 +31,21 @@ function App() {
         }}
       />
       <button onClick={searchMovies}>Cerca</button>
+
+      {movies.map((movie) => {
+        return (
+          <Card style={{ width: "18rem" }}>
+            <Card.Img src={movie.poster} />
+            <Card.Body>
+              <Card.Title>{movie.title}</Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroup.Item>{movie.year}</ListGroup.Item>
+              <ListGroup.Item>{movie.rating}</ListGroup.Item>
+            </ListGroup>
+          </Card>
+        );
+      })}
     </>
   );
 }
