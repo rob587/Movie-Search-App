@@ -22,8 +22,16 @@ function App() {
     //console.log(results);
   };
 
+  const moviesPerPage = 4;
+  const start = (page - 1) * moviesPerPage;
+  const end = start + moviesPerPage;
+  const paginatedMovies = filteredMovie.slice(start, end);
+
   return (
     <>
+      <button onClick={() => setPage((prev) => prev - 1)}>Precedente</button>
+      <button onClick={() => setPage((prev) => prev + 1)}>Successiva</button>
+
       <h1>Movie Search App</h1>
       <input
         onKeyDown={(e) => e.key === "Enter" && searchMovies()}
@@ -36,7 +44,9 @@ function App() {
       />
       <button onClick={searchMovies}>Cerca</button>
 
-      {filteredMovie.map((movie) => {
+      {paginatedMovies.length === 0 && <p>Nessun film trovato!</p>}
+
+      {paginatedMovies.map((movie) => {
         return (
           <Link key={movie.id} to={`/movie/${movie.id}`}>
             <Card key={movie.id} style={{ width: "18rem" }}>
