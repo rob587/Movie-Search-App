@@ -15,6 +15,7 @@ function App() {
   const [error, setError] = useState(false);
 
   const searchMovies = () => {
+    setPage(1);
     const results = movies.filter((movie) =>
       movie.title.toLowerCase().includes(inputValue.toLowerCase()),
     );
@@ -29,9 +30,15 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setPage((prev) => prev - 1)}>Precedente</button>
-      <button onClick={() => setPage((prev) => prev + 1)}>Successiva</button>
-
+      <button disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>
+        Precedente
+      </button>
+      <button
+        disabled={end >= filteredMovie.length}
+        onClick={() => setPage((prev) => prev + 1)}
+      >
+        Successiva
+      </button>
       <h1>Movie Search App</h1>
       <input
         onKeyDown={(e) => e.key === "Enter" && searchMovies()}

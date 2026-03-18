@@ -7,9 +7,9 @@ const DetailCard = () => {
   const { id } = useParams();
 
   const movie = movies.find((movie) => movie.id === Number(id));
+  if (!movie) return <p>Film non trovato!</p>;
   return (
     <>
-      if (!movie) return <p>Film non trovato!</p>;
       <Card>
         <Card.Img variant="top" src={movie.poster} />
         <Card.Body>
