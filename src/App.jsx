@@ -30,45 +30,100 @@ function App() {
 
   return (
     <>
-      <button disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>
-        Precedente
-      </button>
-      <button
-        disabled={end >= filteredMovie.length}
-        onClick={() => setPage((prev) => prev + 1)}
-      >
-        Successiva
-      </button>
-      <h1>Movie Search App</h1>
-      <input
-        onKeyDown={(e) => e.key === "Enter" && searchMovies()}
-        type="text"
-        value={inputValue}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-          if (e.target.value === "") setFilteredMovie(movies);
-        }}
-      />
-      <button onClick={searchMovies}>Cerca</button>
+      <div className="bg-dark min-vh-100 text-white py-5">
+        <div className="container">
+          {/* Header */}
+          <h1 className="text-center mb-4 fw-bold">🎬 Movie Search App</h1>
 
-      {paginatedMovies.length === 0 && <p>Nessun film trovato!</p>}
+          {/* Search bar */}
+          <div
+            className="input-group mb-5 mx-auto"
+            style={{ maxWidth: "600px" }}
+          >
+            <input
+              type="text"
+              className="form-control form-control-lg bg-secondary text-white border-0"
+              placeholder="Cerca un film..."
+              value={inputValue}
+              onKeyDown={(e) => e.key === "Enter" && searchMovies()}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                if (e.target.value === "") setFilteredMovie(movies);
+              }}
+            />
+            <button className="btn btn-danger px-4" onClick={searchMovies}>
+              Cerca
+            </button>
+          </div>
 
-      {paginatedMovies.map((movie) => {
-        return (
-          <Link key={movie.id} to={`/movie/${movie.id}`}>
-            <Card key={movie.id} style={{ width: "18rem" }}>
-              <Card.Img src={movie.poster} />
-              <Card.Body>
-                <Card.Title>{movie.title}</Card.Title>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroup.Item>{movie.year}</ListGroup.Item>
-                <ListGroup.Item>{movie.rating}</ListGroup.Item>
-              </ListGroup>
-            </Card>
-          </Link>
-        );
-      })}
+          {/* Nessun risultato */}
+          {paginatedMovies.length === 0 && (
+            <p className="text-center text-secondary fs-5">
+              Nessun film trovato!
+            </p>
+          )}
+
+          {/* Griglia film */}
+          <div className="row g-4">
+            {paginatedMovies.map((movie) => (
+              <div className="col-6 col-md-4 col-lg-3" key={movie.id}>
+                <Link
+                  to={`/movie/${movie.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card
+                    className="h-100 bg-secondary border-0 text-white"
+                    style={{ cursor: "pointer", transition: "transform 0.2s" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.03)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
+                  >
+                    <Card.Img
+                      src={movie.poster}
+                      alt={movie.title}
+                      style={{ height: "320px", objectFit: "cover" }}
+                    />
+                    <Card.Body className="p-2">
+                      <Card.Title className="fs-6 mb-1">
+                        {movie.title}
+                      </Card.Title>
+                      <div
+                        className="d-flex justify-content-between text-secondary"
+                        style={{ fontSize: "13px" }}
+                      >
+                        <span>{movie.year}</span>
+                        <span>⭐ {movie.rating}</span>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* Paginazione */}
+          <div className="d-flex justify-content-center align-items-center gap-3 mt-5">
+            <button
+              className="btn btn-outline-light"
+              disabled={page === 1}
+              onClick={() => setPage((prev) => prev - 1)}
+            >
+              ← Precedente
+            </button>
+            <span className="text-secondary">Pagina {page}</span>
+            <button
+              className="btn btn-outline-light"
+              disabled={end >= filteredMovie.length}
+              onClick={() => setPage((prev) => prev + 1)}
+            >
+              Successiva →
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
